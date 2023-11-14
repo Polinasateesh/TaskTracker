@@ -20,11 +20,12 @@ const TaskForm = ({ dispatch }) => {
             <form onSubmit={handleSubmit} className='card-content'>
                 <TextField
                     type="text"
-                    label="Enter Task..."
+                    label="Enter Task"
                     value={taskName}
+                    required
                     onChange={(e) => setTaskName(e.target.value)}
                     sx={{width:'50%' }}
-                    size='large'
+                    size='small'
 
                 />
                 <Button type="submit" variant="contained">+ Add Task</Button>

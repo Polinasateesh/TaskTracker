@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { Card, IconButton, Checkbox, CircularProgress,Box } from '@mui/material';
+import { Card, IconButton, Checkbox, CircularProgress,Box ,Tooltip} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import './TaskList.css'
 const TaskList = ({ tasks, dispatch }) => {
@@ -21,7 +21,7 @@ const TaskList = ({ tasks, dispatch }) => {
                             </div>
 
                             <IconButton onClick={() => dispatch({ type: 'DELETE_TASK', payload: task.id })}>
-                                <DeleteIcon className='delete-icon' fontSize='medium' />
+                            <Tooltip title='Delete'><DeleteIcon className='delete-icon' fontSize='medium' /></Tooltip>
                             </IconButton>
                         </div>
 

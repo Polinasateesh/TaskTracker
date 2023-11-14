@@ -1,12 +1,14 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { Card,IconButton,Checkbox } from '@mui/material';
+import { Card, IconButton, Checkbox, CircularProgress,Box } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import './TaskList.css'
 const TaskList = ({ tasks, dispatch }) => {
     return (
         <Card>
             <ul>
-                {tasks.map((task) => (
+                {tasks.length === 0 ? <Box sx={{ display: 'flex',justifyContent:'center',alignItems:'center' }}>
+                    <CircularProgress />
+                </Box> : tasks.map((task) => (
                     <li key={task.id} className='list' >
                         <div className='list-container'>
                             <div>
@@ -19,11 +21,11 @@ const TaskList = ({ tasks, dispatch }) => {
                             </div>
 
                             <IconButton onClick={() => dispatch({ type: 'DELETE_TASK', payload: task.id })}>
-                            <DeleteIcon className='delete-icon' fontSize='medium'/>
+                                <DeleteIcon className='delete-icon' fontSize='medium' />
                             </IconButton>
                         </div>
 
-                        <hr/>
+                        <hr />
                     </li>
 
                 ))}

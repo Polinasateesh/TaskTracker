@@ -23,7 +23,7 @@ const TaskForm = ({ dispatch }) => {
                     label="Enter Task..."
                     value={taskName}
                     onChange={(e) => setTaskName(e.target.value)}
-                    sx={{width:'50%'}}
+                    sx={{width:'50%' }}
                     size='large'
 
                 />
